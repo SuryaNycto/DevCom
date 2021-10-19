@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>welcome</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    
+   
+    </head>
+  <body>
+     
+ 
+          <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+  <a class="navbar-brand" href="/" style="font-size:20px;color:white;font-weight:bolder">ThatDev</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/dsa"style="font-size:20px;color:lightblue;font-weight:bold" >DSA <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/dsa" style="font-size:20px;color:lightblue;font-weight:bold" >C++</a>
+      </li>
+
+       <li class="nav-item">
+        <a class="nav-link" href="#" style="font-size:20px;color:lightblue;font-weight:bold">Python</a>
+      </li>
+
+       <li class="nav-item">
+        <a class="nav-link" href="#" style="font-size:20px;color:lightblue;font-weight:bold">Java</a>
+      </li>
+
+       <li class="nav-item">
+        <a class="nav-link" href="#" style="font-size:20px;color:lightblue;font-weight:bold">Dev</a>
+      </li>
+
+<ul class="navbar-nav">
+             <li class="nav-item">
+        <a class="nav-link" href="/register" style="font-size:20px;color:yellow;font-weight:bold">SignUp</a>
+      </li>
+
+             <li class="nav-item">
+        <a class="nav-link" href="/accounts/login" style="font-size:20px;color:yellow;font-weight:bold">Login</a>
+      </li>
+
+   {% if request.user.is_authenticated%}
+      <li class="nav-item">
+        <a class="nav-link " href="/accounts/logout" style="font-size:20px;color:yellow;font-weight:bold">Logout</a>
+      </li>
+
+       <li class="nav-item">
+        <a class="nav-link " href="/accounts/logout" style="font-size:20px;color:cyan;font-weight:bold">{{request.user.username}}</a>
+      </li>
+    
+    {% endif %}
+ </ul>       
+    
+  </div>
+</nav>
+  
+  <div class="jumbotron">
+  <div class="container">
+    <h1>Welcome to That Dev :D  </h1>
+  </div>
+  </div>
+
+
+        {% block body_block%}
+        
+        {% endblock %}
+
+       
+    </body>
+
+</html>

@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block body_block %}
+<div class="jumbotron">
+    <div class="container">
+<table border="10px" style="width:100%">
+    <tr>
+        <th>Category</th>
+        <th>Concept</th>
+        <th>Link</th>
+    </tr>
+    
+   {% for vals in obj %} 
+    <tr>    
+        <td style="font-weight:bolder">{{vals.category}} </td>
+        <td style="font-weight:bolder">{{vals.concepts}} </td>
+        <td style="font-weight:bolder"><a href="{{vals.link}}"}>Click Here </a> </td>
+        <td style="color:black"><a href="/delete/{{vals.id}}"> Delete X </a> </td>
+    <tr>
+    {% endfor %}
+
+</table>
+</div>
+</div>
+
+
+<form method="POST">
+{% csrf_token %}
+<div class ="jumbotron">   
+    <div class="container">
+    {{form.as_p}}
+    <button type="submit" class="btn btn-primary">Submit</button>
+</div>
+</div>
+</form>
+
+
+
+{% endblock %}
